@@ -15,5 +15,4 @@ use Quidos\Lar\Routing\Router;
 // var_dump($routes);
 
 $router = Router::fromGlobals();
-echo $router::sayHi();
-var_dump($router->routes);
+$router->route();

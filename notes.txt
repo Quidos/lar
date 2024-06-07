@@ -1,0 +1,10 @@
+$routesGet = [
+    '/user/{id}/apps/{appId}' => 'UserController@show',
+];
+
+$routesPost = [
+    '/user/{id}/apps/{appId}' => 'UserController@show',
+];
+
+/user/1/apps/2
+/user/[A-z0-9]+/apps/

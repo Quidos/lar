@@ -9,4 +9,9 @@ class UserController
     {
         return new View('Users/Show.php', ['id' => $id]);
     }
+
+    public function create()
+    {
+        return new View('Users/Show.php');
+    }
 }

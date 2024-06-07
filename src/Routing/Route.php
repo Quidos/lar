@@ -3,11 +3,13 @@
 namespace Quidos\Lar\Routing;
 
 class Route {
-    public string $uri;
-    public string $method;
-    function __construct(string $method, string $uri)
+    public string $regexPath;
+    function __construct(
+        public string $method, 
+        public string $path,
+        public string $controllerMethod,
+    )
     {
-        $this->uri = $uri;
-        $this->method = $method;
+        $this->regexPath = preg_replace('/\{[A-z]+\}/', '([a-zA-Z0-9]+)', $path);
     }
 }
