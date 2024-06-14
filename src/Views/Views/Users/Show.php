@@ -6,6 +6,6 @@
     <title>Users</title>
 </head>
 <body>
-    Show user <?= $id ?>
+    Show user <?= $user['name'] ?>
 </body>
 </html>

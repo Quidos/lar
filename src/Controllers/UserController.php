@@ -3,22 +3,19 @@
 namespace Quidos\Lar\Controllers;
 
 use Quidos\Lar\Kernel\Facades\ViewFacade;
-use Quidos\Lar\Views\View;
+use Quidos\Lar\Models\User;
 
 class UserController 
 {
 
     public function index()
     {
-        return ViewFacade::view('Users/Index.php', ['myVar' => 'h']);
+        $users = (new User())->all();
+        return ViewFacade::view('Users/Index.php', ['users' => $users]);
     }
     public function show(string $id)
     {
-        return new View('Users/Show.php', ['id' => $id]);
-    }
-
-    public function create()
-    {
-        return new View('Users/Show.php');
+        $user = (new User())->find(intval($id));
+        return ViewFacade::view('Users/Show.php', ['user' => $user]);
     }
 }

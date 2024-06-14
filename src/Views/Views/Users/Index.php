@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    hello, <?= $myVar ?>
+    Users:
+    <?php foreach($users as $user): ?>
+        <div>
+            <?= $user['name'] ?>
+        </div>
+    <?php endforeach; ?>
 </body>
 </html>
